@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🩺 Health Bot</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="branding">🩺 Health Bot</div>
+      <button class="new-chat" onclick="startNewChat()">+ New Chat</button>
+      <div id="history" class="chat-history"></div>
+    </div>
+
+    <!-- Chat Area -->
+    <div class="chat-area">
+      <div class="chat-header">
+        <span><strong>🩺 Health Bot</strong></span>
+        <button onclick="toggleTheme()">🌓</button>
+      </div>
+
+      <div id="chat-log" class="chat-log"></div>
+
+      <div id="typing-indicator" class="hidden typing-animation">
+        <div id="lottie" style="height: 80px; width: 80px; margin: auto;"></div>
+      </div>
+
+      <div id="suggestions" class="suggestions">
+        <button onclick="document.getElementById('query').value='What are symptoms of diabetes?'; handleSubmit();">🩸 Diabetes</button>
+        <button onclick="document.getElementById('query').value='Tips for healthy sleep?'; handleSubmit();">🛌 Sleep</button>
+        <button onclick="document.getElementById('query').value='How to manage stress?'; handleSubmit();">😌 Stress</button>
+      </div>
+
+      <div class="chat-input-area">
+        <input type="file" id="file-upload" style="display: none;" multiple />
+        <button onclick="document.getElementById('file-upload').click()">📁</button>
+        <input type="text" id="query" class="query" placeholder="Ask a health-related question..." />
+        <button onclick="handleSubmit()">➡️</button>
+        <button onclick="handleVoiceInput()">🎤</button>
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
